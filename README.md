@@ -1,7 +1,9 @@
 # The Sleep App
 
 ### Installation
+
 **DB Migration**
+
 To start database migration, you need to setup first db connection in knexfile.js, as we used knex for sql query builder in this application. Once you run the db migration, 5 new tables will be created on your database.
 ```sh
 cp knexfile.example.js knexfile.js
@@ -9,7 +11,9 @@ cp knexfile.example.js knexfile.js
 
 knex migrate:latest --env localhost  
 ```
-**Install dependencies and Start the Server**
+
+**Install dependencies and Start Server**
+
 To start the application in your local, you can run command as below
 ```sh
 npm run install
