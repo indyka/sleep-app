@@ -1,0 +1,4 @@
+knexfile.js
+node_modules
+/coverage
+/dist
