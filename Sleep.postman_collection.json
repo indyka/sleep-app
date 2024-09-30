@@ -1,0 +1,214 @@
+{
+	"info": {
+		"_postman_id": "aade4236-ffd8-4e4d-8c1f-108886d2eeed",
+		"name": "Sleep",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23078911"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"bambang\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/user/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"bambang\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/user/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Follow",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXIiOnsiaWQiOjEsInVzZXJuYW1lIjoicHVybm9tbyJ9fSwiZXhwIjoxNzI3NzE4MzE3LCJzdWIiOiJzbGVlcC1hcHAiLCJpc3MiOiJzbGVlcC1hcHAiLCJpYXQiOjE3Mjc3MTQ3MTd9.8hwmxyjrkphIZpeD_sdsc55oJfbw5vrzg6SUDOEgOMs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/user/follow",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"follow"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Unfollow",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXIiOnsiaWQiOjEsInVzZXJuYW1lIjoiYmFtYmFuZyIsImNyZWF0ZWRfYXQiOiIyMDI0LTA5LTI4VDA2OjMyOjAzLjAwMFoiLCJ1cGRhdGVkX2F0IjoiMjAyNC0wOS0yOFQwNjozMjowMy4wMDBaIn19LCJleHAiOjE3Mjc1ODUzMDAsInN1YiI6InNsZWVwLWFwcCIsImlzcyI6InNsZWVwLWFwcCIsImlhdCI6MTcyNzU4MTcwMH0._jQWb0isOwIkHV4j6BcrlLi4LV0tv4-GMjzOGw3QFBw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/user/unfollow",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"unfollow"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set sleep",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXIiOnsiaWQiOjEsInVzZXJuYW1lIjoiYmFtYmFuZyIsImNyZWF0ZWRfYXQiOiIyMDI0LTA5LTI4VDA2OjMyOjAzLjAwMFoiLCJ1cGRhdGVkX2F0IjoiMjAyNC0wOS0yOFQwNjozMjowMy4wMDBaIn19LCJleHAiOjE3Mjc1ODUzMDAsInN1YiI6InNsZWVwLWFwcCIsImlzcyI6InNsZWVwLWFwcCIsImlhdCI6MTcyNzU4MTcwMH0._jQWb0isOwIkHV4j6BcrlLi4LV0tv4-GMjzOGw3QFBw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/timeline/sleep",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"timeline",
+						"sleep"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get timeline",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXIiOnsiaWQiOjIsInVzZXJuYW1lIjoiam9rbyIsImNyZWF0ZWRfYXQiOiIyMDI0LTA5LTI4VDE5OjAwOjIzLjAwMFoiLCJ1cGRhdGVkX2F0IjoiMjAyNC0wOS0yOFQxOTowMDoyMy4wMDBaIn19LCJleHAiOjE3Mjc1OTU5ODgsInN1YiI6InNsZWVwLWFwcCIsImlzcyI6InNsZWVwLWFwcCIsImlhdCI6MTcyNzU5MjM4OH0.BcOKiWKgRbmdBTjnTL5sDVlvDkklGJxC13I60hTXJM0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/timeline?limit=1&offset=0",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"timeline"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "1"
+						},
+						{
+							"key": "offset",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
