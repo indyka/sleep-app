@@ -29,8 +29,16 @@ test('follow user success', async () => {
     UserRepository.findById.mockImplementation(() => Promise.resolve({ id: 99, username: 'ahmad' }));
     UserRepository.upsertFollow.mockImplementation(() => Promise.resolve(true));
 
-    const result = UserLogic.follow(1, 99);
+    const result = UserLogic.follow(99, 1);
     await expect(result).resolves.not.toThrow();
+});
+
+test('follow themself', async () => {
+    UserRepository.findById.mockImplementation(() => Promise.resolve({ id: 99, username: 'ahmad' }));
+    UserRepository.upsertFollow.mockImplementation(() => Promise.resolve(true));
+
+    const result = UserLogic.follow(99, 99);
+    await expect(result).rejects.toThrow();
 });
 
 test('follow user not found', async () => {

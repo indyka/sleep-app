@@ -16,6 +16,19 @@ const updateSession = async (trx, id, data) => {
     await SleepSession.update(trx, id, data);
 };
 
+const getSessionsByUserId = async (userId) => {
+    const selects = [
+        `${SleepSession.tableName}.id`,
+        `${SleepSession.tableName}.start_at`,
+        `${SleepSession.tableName}.end_at`,
+        `${SleepSession.tableName}.duration`,
+    ];
+
+    const results = await SleepSession.find(null, { user_id: userId }, selects)
+        .orderBy(`${SleepSession.tableName}.created_at`, 'DESC');
+    return results;
+};
+
 const getFriendsSessionsByStatuses = async (userId, statuses, limit, offset) => {
     const selects = [
         `${SleepSession.tableName}.id`,
@@ -26,7 +39,7 @@ const getFriendsSessionsByStatuses = async (userId, statuses, limit, offset) => 
         `${User.tableName}.username`,
     ];
 
-    const result = await SleepSession.find(null, {}, selects)
+    const results = await SleepSession.find(null, {}, selects)
         .join(Following.tableName, `${Following.tableName}.following_user_id`, `${SleepSession.tableName}.user_id`)
         .join(User.tableName, User.pk, `${SleepSession.tableName}.user_id`)
         .where(`${Following.tableName}.user_id`, userId)
@@ -34,7 +47,7 @@ const getFriendsSessionsByStatuses = async (userId, statuses, limit, offset) => 
         .orderBy(`${SleepSession.tableName}.created_at`, 'DESC')
         .limit(limit)
         .offset(offset);
-    return result;
+    return results;
 };
 
 export {
@@ -42,5 +55,6 @@ export {
     getSession,
     createSession,
     updateSession,
+    getSessionsByUserId,
     getFriendsSessionsByStatuses,
 };

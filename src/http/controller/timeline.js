@@ -7,7 +7,7 @@ const setSleep = utilities.controllerWrapper(async (req, res) => {
 
     const result = await TimelineLogic.setSleepSession(user.id);
 
-    return response.httpResponse.ok(res, `Successfully ${result}`);
+    return response.httpResponse.ok(res, `Successfully ${result.message}`, result.sessions);
 });
 
 const getTimeline = utilities.controllerWrapper(async (req, res) => {

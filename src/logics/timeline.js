@@ -29,11 +29,13 @@ const createUpdateSession = async (trx, userId) => {
 };
 
 const setSleepSession = async (userId) => {
-    const result = await SleepSessionRepository.lib.transaction(async (trx) => {
+    const message = await SleepSessionRepository.lib.transaction(async (trx) => {
         return await createUpdateSession(trx, userId);
     });
 
-    return result;
+    const sessions = await SleepSessionRepository.getSessionsByUserId(userId);
+
+    return { message, sessions };
 };
 
 const getFriendsSessions = async (userId, statuses, limit, offset) => {
