@@ -16,7 +16,7 @@ knex migrate:latest --env localhost
 
 To start the application in your local, you can run command as below
 ```sh
-npm run install
+npm install
 npm run local
 ```
 As the code is written in ES6, you need to compile the code for non-local usage
